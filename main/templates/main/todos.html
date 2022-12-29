@@ -12,7 +12,7 @@
     <div class="row my-2 mx-2 p-1 bg-light border border-secondary rounded">
         <p class="col text-capitalize font-weight-bold pt-2">{{todo.name }}</p>
         <a href="/view/todo/{{todo.id}}" class="mr-2 col-1 btn btn-primary my-1">View</a>
-        <a href="/delete/todo/{{todo.id}}" class="mr-2 col-1 btn btn-danger my-1">Delete</a>
+        <a href="/delete/todo/{{todo.id}}" class="mr-2 col-1 btn btn-danger my-1" id="todo-{{todo.id}}" onclick="confirmTodoDelete('{{todo.id}}')">Delete</a>
     </div>
     {% endfor %}
 <!-- <div class="input-group mb-3">     
