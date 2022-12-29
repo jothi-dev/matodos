@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% block title %}Todos{% endblock title %}
+
+{% block content %}
+    <div class="row mt-2 mr-2">
+        <h1 class="col">My Todo List</h1>
+        <a href="/create/todo" class="btn btn-success col-2 mt-3">Create Todo</a>
+    </div>
+    <hr class="mt-2 mb-4">
+
+    {% for todo in todos %}
+    <div class="row my-2 mx-2 p-1 bg-light border border-secondary rounded">
+        <p class="col text-capitalize font-weight-bold pt-2">{{todo.name }}</p>
+        <a href="/view/todo/{{todo.id}}" class="mr-2 col-1 btn btn-primary my-1">View</a>
+        <a href="/delete/todo/{{todo.id}}" class="mr-2 col-1 btn btn-danger my-1">Delete</a>
+    </div>
+    {% endfor %}
+<!-- <div class="input-group mb-3">     
+    <div class="input-group-prepend">
+        <input type="text", name="new">
+        <button type="submit", name="newItem", value="newItem", class="btn btn-success">Add Item</button>
+    </div>
+    <input type="text", name="new">
+</div>
+<button type="submit", name="save", value="save",  class="btn btn-success">Save</button> -->
+{% endblock %}
